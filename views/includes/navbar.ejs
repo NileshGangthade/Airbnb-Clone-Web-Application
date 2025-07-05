@@ -1,0 +1,112 @@
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-danger" href="#">
+      <i class="fa-solid fa-compass fa-spin me-1"></i> Airbnb
+    </a>
+
+    <!-- Toggle button for small screens -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+      aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarMenu">
+
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/listings">Explore</a>
+        </li>
+      </ul>
+
+      <!-- <div class="d-flex mx-auto my-2 my-md-0">
+        <div class="search-bar">
+          <div class="search-option">
+            <img src="https://cdn-icons-png.flaticon.com/128/10481/10481926.png" alt="home" />
+            <span>Homes nearby</span>
+          </div>
+          <div class="divider"></div>
+          <div class="search-option"><span>Any week</span></div>
+          <div class="divider"></div>
+          <div class="search-option"><span>Add guests</span></div>
+          <div class="search-button">
+            <i class="fas fa-search"></i>
+          </div>
+        </div>
+      </div> -->
+
+      <form class="search-bar" id="searchForm" action="/listings" method="GET">
+  <!-- Location -->
+  <div class="search-option">
+    <img src="https://cdn-icons-png.flaticon.com/128/10481/10481926.png" alt="home" />
+    <input
+      type="text"
+      class="form-control border-0 p-0"
+      name="location"
+      placeholder="Homes nearby"
+      aria-label="Location"
+      
+    />
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Date (week or date range) -->
+  <div class="search-option">
+    <input
+      type="text"
+      class="form-control border-0"
+      name="date"
+      placeholder="Any week"
+      aria-label="Date"
+      onfocus="(this.type='date')"
+    />
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Guests -->
+  <div class="search-option">
+    <input
+      type="number"
+      class="form-control border-0 p-0"
+      name="guests"
+      placeholder="Add guests"
+      aria-label="Guests"
+      min="1"
+    />
+  </div>
+
+  <!-- Search button -->
+  <button type="submit" class="search-button">
+    <i class="fas fa-search"></i>
+  </button>
+</form>
+
+
+      <!-- Right links -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/listings/new">Airbnb your home</a>
+        </li>
+        <% if (!currentUser) { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/login"><b>Login</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+          </li>
+        <% } else { %>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Hi, <%= currentUser.username %>!</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout"><b>Logout</b></a>
+          </li>
+        <% } %>
+      </ul>
+
+    </div>
+  </div>
+</nav>

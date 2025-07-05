@@ -1,0 +1,98 @@
+<% layout("layouts/boilerplate.ejs") %>
+ 
+  <div class="category-filter">
+    <div class="category">
+      <i class="fas fa-fire"></i>
+      <span>Trending</span>
+    </div>
+    <div class="category">
+      <i class="fas fa-bed"></i>
+      <span>Rooms</span>
+    </div>
+    <div class="category">
+      <i class="fas fa-city"></i>
+      <span>Iconic Cities</span>
+    </div>
+    <div class="category">
+      <i class="fas fa-mountain"></i>
+      <span>Mountains</span>
+    </div>
+    <div class="category">
+      <i class="fas fa-chess-rook"></i>
+      <span>Castles</span>
+    </div>
+    <div class="category">
+      <i class="fas fa-swimmer"></i>
+      <span>Amazing Pools</span>
+    </div>
+    <div class="category">
+      <i class="fas fa-campground"></i>
+      <span>Camping</span>
+    </div>
+    <div class="category">
+      <i class="fas fa-tractor"></i>
+      <span>Farms</span>
+    </div>
+    <div class="category">
+      <i class="fas fa-snowflake"></i>
+      <span>Arctic</span>
+    </div>
+    <div class="category">
+    <i class="fas fa-umbrella-beach"></i>
+    <span>Beachfront</span>
+  </div>
+  <div class="category">
+    <i class="fas fa-ship"></i>
+    <span>Boats</span>
+  </div>
+  <div class="category">
+    <i class="fas fa-water"></i>
+    <span>Lakefront</span>
+  </div>
+  <div class="category">
+    <i class="fas fa-gem"></i>
+    <span>Luxe</span>
+  </div>
+  <div class="category">
+    <i class="fas fa-home"></i>
+    <span>Tiny Homes</span>
+  </div>
+  <div class="category">
+    <i class="fas fa-tree"></i>
+    <span>Cabins</span>
+  </div>
+  <div class="category">
+    <i class="fas fa-landmark"></i>
+    <span>Ryokans</span>
+  </div>
+  <div class="category">
+    <i class="fas fa-sun"></i>
+    <span>Desert</span>
+  </div>
+  <div class="category">
+    <i class="fas fa-person-swimming"></i>
+    <span>Surfing</span>
+  </div>
+
+</div>
+</div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+      <% for(let listing of allListings) { %>
+        
+        <div class="card cols" >
+          <a href="/listings/<%= listing._id %>">
+            <img src="<%- listing.image.url %>" class="card-img-top" alt="<%- listing.image.filename %>">
+            <div class="card-body">
+              <p class="card-text"><b><%= listing.title %></b> <br> &#8377; <%= listing.price.toLocaleString("en-IN")  %> / Night</p>
+            </div>
+          </a>
+        </div>
+        
+      <% } %>
+      
+      </div>
+
+      
+      
+  
+

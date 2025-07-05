@@ -1,0 +1,17 @@
+<% layout("layouts/boilerplate.ejs") %>
+<body>
+
+<div class="error">
+  <div class="error-box">
+    <div class="error-icon">🚫</div>
+    <h1 class="mt-3"><%= statusCode || 500 %> Error</h1>
+    <p class="text-muted">
+      <%= message || "Something went wrong. Please try again later." %>
+    </p>
+    <a href="/listings" class="btn btn-danger btn-home">Go to Home</a>
+  </div>
+</div>
+
+
+
+</body>

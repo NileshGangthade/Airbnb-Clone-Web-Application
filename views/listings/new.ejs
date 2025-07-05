@@ -1,0 +1,73 @@
+<% layout("layouts/boilerplate.ejs") %>
+
+<div class="container mt-4 mb-5" >
+  <h3 class="mb-4 offset-4">Create a New Listing</h3>
+
+  <form class="row g-3 needs-validation" method="POST" action="/listings" enctype="multipart/form-data" novalidate>
+    <div class="col-md-6">
+      <label for="titleInput" class="form-label">Listing Title:</label>
+      <input type="text" class="form-control" id="titleInput" name="listing[title]" placeholder="Enter title" required>
+      <div class="invalid-feedback">
+        Please enter a title.
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="priceInput" class="form-label">Price (INR):</label>
+      <input type="number" class="form-control" id="priceInput" name="listing[price]" placeholder="Enter price" required>
+      <div class="invalid-feedback">
+        Please enter a valid price.
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <label for="descriptionInput" class="form-label">Description:</label>
+      <textarea class="form-control" id="descriptionInput" name="listing[description]" placeholder="Enter description" rows="3" required></textarea>
+      <div class="invalid-feedback">
+        Please provide a description.
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <label for="imageInput" class="form-label">Upload Image:</label>
+      <input type="file" class="form-control" id="imageInput" name="listing[image]" accept="image/*" placeholder=""  required>
+      <div class="invalid-feedback">
+        Please provide a valid image(.png, .jpg, .jpeg).
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="locationInput" class="form-label">City:</label>
+      <input type="text" class="form-control" id="locationInput" name="listing[location]" placeholder="Enter city" required>
+      <div class="invalid-feedback">
+        Please enter a valid city.
+      </div>
+    </div>
+
+    <div class="col-md-6" >
+      <label for="countryInput" class="form-label">Country:</label>
+      <input type="text" class="form-control" id="countryInput" name="listing[country]" placeholder="Enter country" required>
+      <div class="invalid-feedback">
+        Please enter a valid country.
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="termsCheck" required>
+        <label class="form-check-label" for="termsCheck">
+          Agree to terms and conditions
+        </label>
+        <div class="invalid-feedback">
+          You must agree before submitting.
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+  </form>
+</div>
+
+
